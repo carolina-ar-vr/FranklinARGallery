@@ -13,7 +13,7 @@ If you've done this before with the other demo app then you should only need to 
 ## Contributing
 
 If you need to create a new marker, see Evan Revis' instructions here:
-[https://github.com/carolina-ar-vr/Franklin-AR/blob/erevis-branch/readme.md](https://github.com/carolina-ar-vr/Franklin-AR/blob/erevis-branch/readme.md)
+[https://github.com/carolina-ar-vr/FranklinARGallery/blob/master/docs/createMarker.md](https://github.com/carolina-ar-vr/FranklinARGallery/blob/master/docs/createMarker.md)
 
 Currently there are only three places where any AR.js development should be happening, and they are all inside of ```index.html```
 
