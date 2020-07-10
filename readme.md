@@ -15,15 +15,13 @@ If you've done this before with the other demo app then you should only need to 
 If you need to create a new marker, see Evan Revis' instructions here:
 [https://github.com/carolina-ar-vr/FranklinARGallery/blob/master/docs/createMarker.md](https://github.com/carolina-ar-vr/FranklinARGallery/blob/master/docs/createMarker.md)
 
-Currently there are only two places where any AR.js development should be happening, and they are both inside of ```index.html```
+Currently there are only three places where any AR.js development should be happening, and they are all inside of ```index.html```
 
-There are two Javascript strings which are used to store two states the page can be in, marker mode and location mode. There is a main div in the HTML body whose contents gets replaced with one of these strings on page load and subsequently as the toggle button is pressed. 
+First there is the default HTML which populates on page load. After that, there are two Javascript strings which are used to store two states the page can be in, marker mode and location mode. There is a main div in the HTML body whose contents gets replaced with one of these strings as the toggle button is pressed. 
 
-~~At the moment there is duplicate code so if you need to make changes to the marker mode, you'll need to edit the default HTML as well as updating the Javascript string titled ```markerCode``` to match it so that your changes carry over as modes are toggled.~~ Update: I set up an initialization function and removed the duplicate HTML. Updates should only need to be made one time now regardless of which mode it is.
+At the moment there is duplicate code so if you need to make changes to the marker mode, you'll need to edit the default HTML as well as updating the Javascript string titled ```markerCode``` to match it so that your changes carry over as modes are toggled.
 
-If you need to make updates to the marker tracking mode you will need to edit the Javascript string titled ```markerCode```
-
-If you need to make updates to the location based mode you will need to edit the Javascript string titled ```locationCode```
+If you need to make updates to the location based mode you will only need to edit the Javascript string ```locationCode```
 
 Please make sure you understand how the Javascript is toggling these page contents before adding any new HTML.
 
