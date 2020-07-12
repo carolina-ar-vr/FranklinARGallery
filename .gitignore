@@ -118,3 +118,4 @@ dist
 # local development https/SSL stuff
 *.key
 *.cert
+app.js
