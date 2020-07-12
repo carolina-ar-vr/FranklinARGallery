@@ -93,6 +93,21 @@
             </a-torus-knot>
           </a-box>
         </a-marker>
+
+        <!-- handle CARVR marker *using temporary assets repo* -->
+        <a-marker type='pattern' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/erevis/FranklinARAssets/master/assets/patts/pattern-CARVR_MARKER.patt'>
+          <a-entity
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="0 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/erevis/FranklinARAssets/master/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/erevis/FranklinARAssets/master/assets/images/starry-night.jpg"
+            width="1.8"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
     
         <!-- add a simple camera -->
         <a-entity camera></a-entity>
