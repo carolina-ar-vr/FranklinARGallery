@@ -118,13 +118,12 @@
           >
             <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/starry-night.jpg"
             width="1.8"
-            position = "0 0 -.035"
             >
             </a-image> 
           </a-entity>
         </a-marker>
     
-        <!-- handle custom marker2 -->
+        <!-- handle custom marker2 (Triangle Design) -->
         <a-marker 
         type='pattern' 
         url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-Marker2.patt'
@@ -142,7 +141,53 @@
           >
             <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/american_gothic.jpg"
             width="1.8"
-            position = "0 0 -.035"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+      <!-- handle custom marker3 -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-marker3.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/cafe_terrace.jpeg"
+            width="1.8"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+      <!-- handle custom marker4 -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-marker4.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 90"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/mona_lisa_cat.jpg"
+            height="1.8"
+            rotation="0 0 -90"
             >
             </a-image> 
           </a-entity>
