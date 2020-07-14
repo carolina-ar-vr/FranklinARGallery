@@ -73,6 +73,12 @@
     </div>
 
       <a-scene
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
       vr-mode-ui="enabled: false;" 
       embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
@@ -94,9 +100,17 @@
           </a-box>
         </a-marker>
 
-        <!-- handle CARVR marker *using temporary assets repo* -->
-        <a-marker type='pattern' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-CARVR_MARKER.patt'>
+        <!-- handle custom marker1 (CARVR) -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-CARVR_MARKER.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        >
           <a-entity
+          class="clickable"
+          gesture-handler
           position="0 1.5 0"
           scale="0.8 0.8 0.8"
           rotation="90 180 0"
@@ -109,6 +123,29 @@
           </a-entity>
         </a-marker>
     
+        <!-- handle custom marker2 -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-Marker2.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/american_gothic.jpg"
+            width="1.8"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
         <!-- add a simple camera -->
         <a-entity camera></a-entity>
       </a-scene>
@@ -143,6 +180,266 @@
     function redirect() {
       window.location.href = "about";
     }
+
+    //end micah's page content code --------------------------------------------------------------------------------------------------------
+
+    //begin lesli's gesture handling code --------------------------------------------------------------------------------------------------
+
+      // //The js i customized from https://aframe.io/docs/0.5.0/components/cursor.html
+  // AFRAME.registerComponent('cursor-listener', {
+  //     init: function () {
+  //       var SHAP = ['box', 'sphere', 'cylinder'];
+  //       this.el.addEventListener('click', function (evt) {
+  //         var randomIndex = Math.floor(Math.random() * SHAP.length);
+  //         this.setAttribute('geometry', 'primitive', SHAP[randomIndex]);
+  //         console.log('I was clicked at: ', evt.detail.intersection.point);
+  //       });
+  //     }
+  //   });
+
+
+  //   AFRAME.registerComponent('cursor-listener-2', {
+  //     init: function () {
+  //       var COLORS = ['red', 'yellow', 'green'];
+  //       this.el.addEventListener('click', function (evt) {
+  //         var randomIndex = Math.floor(Math.random() * COLORS.length);
+  //         this.setAttribute('material', 'color', COLORS[randomIndex]);
+  //         console.log('I was clicked at: ', evt.detail.intersection.point);
+  //       });
+  //     }
+  //   });
+
+    //Starting here, this js is not my code its from https://github.com/fcor/arjs-gestures
+  AFRAME.registerComponent("gesture-detector", {
+  schema: {
+    element: { default: "" }
+  },
+
+  init: function() {
+    this.targetElement =
+      this.data.element && document.querySelector(this.data.element);
+
+    if (!this.targetElement) {
+      this.targetElement = this.el;
+    }
+
+    this.internalState = {
+      previousState: null
+    };
+
+    this.emitGestureEvent = this.emitGestureEvent.bind(this);
+
+    this.targetElement.addEventListener("touchstart", this.emitGestureEvent);
+
+    this.targetElement.addEventListener("touchend", this.emitGestureEvent);
+
+    this.targetElement.addEventListener("touchmove", this.emitGestureEvent);
+  },
+
+  remove: function() {
+    this.targetElement.removeEventListener("touchstart", this.emitGestureEvent);
+
+    this.targetElement.removeEventListener("touchend", this.emitGestureEvent);
+
+    this.targetElement.removeEventListener("touchmove", this.emitGestureEvent);
+  },
+
+  emitGestureEvent(event) {
+    const currentState = this.getTouchState(event);
+
+    const previousState = this.internalState.previousState;
+
+    const gestureContinues =
+      previousState &&
+      currentState &&
+      currentState.touchCount == previousState.touchCount;
+
+    const gestureEnded = previousState && !gestureContinues;
+
+    const gestureStarted = currentState && !gestureContinues;
+
+    if (gestureEnded) {
+      const eventName =
+        this.getEventPrefix(previousState.touchCount) + "fingerend";
+
+      this.el.emit(eventName, previousState);
+
+      this.internalState.previousState = null;
+    }
+
+    if (gestureStarted) {
+      currentState.startTime = performance.now();
+
+      currentState.startPosition = currentState.position;
+
+      currentState.startSpread = currentState.spread;
+
+      const eventName =
+        this.getEventPrefix(currentState.touchCount) + "fingerstart";
+
+      this.el.emit(eventName, currentState);
+
+      this.internalState.previousState = currentState;
+    }
+
+    if (gestureContinues) {
+      const eventDetail = {
+        positionChange: {
+          x: currentState.position.x - previousState.position.x,
+
+          y: currentState.position.y - previousState.position.y
+        }
+      };
+
+      if (currentState.spread) {
+        eventDetail.spreadChange = currentState.spread - previousState.spread;
+      }
+
+      // Update state with new data
+
+      Object.assign(previousState, currentState);
+
+      // Add state data to event detail
+
+      Object.assign(eventDetail, previousState);
+
+      const eventName =
+        this.getEventPrefix(currentState.touchCount) + "fingermove";
+
+      this.el.emit(eventName, eventDetail);
+    }
+  },
+
+  getTouchState: function(event) {
+    if (event.touches.length === 0) {
+      return null;
+    }
+
+    // Convert event.touches to an array so we can use reduce
+
+    const touchList = [];
+
+    for (let i = 0; i < event.touches.length; i++) {
+      touchList.push(event.touches[i]);
+    }
+
+    const touchState = {
+      touchCount: touchList.length
+    };
+
+    // Calculate center of all current touches
+
+    const centerPositionRawX =
+      touchList.reduce((sum, touch) => sum + touch.clientX, 0) /
+      touchList.length;
+
+    const centerPositionRawY =
+      touchList.reduce((sum, touch) => sum + touch.clientY, 0) /
+      touchList.length;
+
+    touchState.positionRaw = { x: centerPositionRawX, y: centerPositionRawY };
+
+    // Scale touch position and spread by average of window dimensions
+
+    const screenScale = 2 / (window.innerWidth + window.innerHeight);
+
+    touchState.position = {
+      x: centerPositionRawX * screenScale,
+      y: centerPositionRawY * screenScale
+    };
+
+    // Calculate average spread of touches from the center point
+
+    if (touchList.length >= 2) {
+      const spread =
+        touchList.reduce((sum, touch) => {
+          return (
+            sum +
+            Math.sqrt(
+              Math.pow(centerPositionRawX - touch.clientX, 2) +
+                Math.pow(centerPositionRawY - touch.clientY, 2)
+            )
+          );
+        }, 0) / touchList.length;
+
+      touchState.spread = spread * screenScale;
+    }
+
+    return touchState;
+  },
+
+  getEventPrefix(touchCount) {
+    const numberNames = ["one", "two", "three", "many"];
+
+    return numberNames[Math.min(touchCount, 4) - 1];
+  }
+});
+  AFRAME.registerComponent("gesture-handler", {
+  schema: {
+    enabled: { default: true },
+    rotationFactor: { default: 5 },
+    minScale: { default: 0.3 },
+    maxScale: { default: 8 },
+  },
+
+  init: function () {
+    this.handleScale = this.handleScale.bind(this);
+    this.handleRotation = this.handleRotation.bind(this);
+
+    this.isVisible = false;
+    this.initialScale = this.el.object3D.scale.clone();
+    this.scaleFactor = 1;
+
+    this.el.sceneEl.addEventListener("markerFound", (e) => {
+      this.isVisible = true;
+    });
+
+    this.el.sceneEl.addEventListener("markerLost", (e) => {
+      this.isVisible = false;
+    });
+  },
+
+  update: function () {
+    if (this.data.enabled) {
+      this.el.sceneEl.addEventListener("onefingermove", this.handleRotation);
+      this.el.sceneEl.addEventListener("twofingermove", this.handleScale);
+    } else {
+      this.el.sceneEl.removeEventListener("onefingermove", this.handleRotation);
+      this.el.sceneEl.removeEventListener("twofingermove", this.handleScale);
+    }
+  },
+
+  remove: function () {
+    this.el.sceneEl.removeEventListener("onefingermove", this.handleRotation);
+    this.el.sceneEl.removeEventListener("twofingermove", this.handleScale);
+  },
+
+  handleRotation: function (event) {
+    if (this.isVisible) {
+      this.el.object3D.rotation.y +=
+        event.detail.positionChange.x * this.data.rotationFactor;
+      this.el.object3D.rotation.x +=
+        event.detail.positionChange.y * this.data.rotationFactor;
+    }
+  },
+
+  handleScale: function (event) {
+    if (this.isVisible) {
+      this.scaleFactor *=
+        1 + event.detail.spreadChange / event.detail.startSpread;
+
+      this.scaleFactor = Math.min(
+        Math.max(this.scaleFactor, this.data.minScale),
+        this.data.maxScale
+      );
+
+      this.el.object3D.scale.x = this.scaleFactor * this.initialScale.x;
+      this.el.object3D.scale.y = this.scaleFactor * this.initialScale.y;
+      this.el.object3D.scale.z = this.scaleFactor * this.initialScale.z;
+    }
+  },
+});
+//end of js from https://github.com/fcor/arjs-gestures
 
   </script>
   <style>
