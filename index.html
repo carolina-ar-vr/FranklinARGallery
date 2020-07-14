@@ -73,17 +73,16 @@
     </div>
 
       <a-scene
-      arjs
-      embedded
       renderer="logarithmicDepthBuffer: true;"
-      vr-mode-ui="enabled: false"
       gesture-detector
       id="scene"
       vr-mode-ui="enabled: false;" 
       embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
         <!-- handle hiro marker -->
-        <a-marker preset='hiro'>
+        <a-marker preset='hiro'
+        smooth="true"
+        >
           <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
             <a-torus-knot radius='0.26' radius-tubular='0.05'
             animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
@@ -92,7 +91,9 @@
         </a-marker>
     
         <!-- handle kanji marker -->
-        <a-marker preset='kanji'>
+        <a-marker preset='kanji'
+        smooth="true"
+        >
           <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
             <a-torus-knot radius='0.26' radius-tubular='0.05'
             animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
@@ -107,6 +108,7 @@
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
         >
           <a-entity
           class="clickable"
@@ -130,6 +132,7 @@
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
         >
           <a-entity
           class="clickable"
@@ -153,6 +156,7 @@
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
         >
           <a-entity
           class="clickable"
@@ -176,6 +180,7 @@
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
         >
           <a-entity
           class="clickable"
@@ -487,6 +492,7 @@
   },
 });
 //end of js from https://github.com/fcor/arjs-gestures
+
 
   </script>
   <style>
