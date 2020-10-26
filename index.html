@@ -36,6 +36,8 @@
     //new location markers can be added by copy and pasting the <a-image> entities
     //and filling in with appropriate lat, long, and business name
 
+    let markerCode = ""
+
     let locationCode =  `
     <div class="buttons">
       <button class="my-button" onclick="toggleMode()">Interact With A Marker</button>
@@ -257,7 +259,7 @@
 
     //the following string should be the same as the default <body> content on page load.
 
-    let markerCode =  `
+    let markerStateOne =  `
     <div class="buttons">
       <button class="my-button" onclick="toggleMode()">Find More Markers</button>
       <button class="my-button" onclick="redirect()">App Website</button>
@@ -396,9 +398,161 @@
       </a-scene>
     `;
 
+    let markerStateTwo =  `
+    <div class="buttons">
+      <button class="my-button" onclick="toggleMode()">Find More Markers</button>
+      <button class="my-button" onclick="redirect()">App Website</button>
+    </div>
+
+      <a-scene
+      renderer="logarithmicDepthBuffer: true;"
+      gesture-detector
+      id="scene"
+      vr-mode-ui="enabled: false;" 
+      embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+        <!-- handle hiro marker -->
+        <a-marker preset='hiro'
+        smooth="true"
+        registerevents
+        >
+          <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
+            <a-torus-knot radius='0.26' radius-tubular='0.05'
+            animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
+            </a-torus-knot>
+          </a-box>
+        </a-marker>
+    
+        <!-- handle kanji marker -->
+        <a-marker preset='kanji'
+        smooth="true"
+        registerevents
+        >
+          <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
+            <a-torus-knot radius='0.26' radius-tubular='0.05'
+            animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
+            </a-torus-knot>
+          </a-box>
+        </a-marker>
+
+        <!-- handle custom marker1 (CARVR) -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-CARVR_MARKER.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/starry-night.jpg"
+            width="1.8"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+    
+        <!-- handle custom marker2 (Triangle Design) -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-Marker2.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/american_gothic.jpg"
+            width="1.8"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+      <!-- handle custom marker3 -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-marker3.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/cafe_terrace.jpeg"
+            width="1.8"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+      <!-- handle custom marker4 -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-marker4.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 90"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/mona_lisa_cat.jpg"
+            height="1.8"
+            rotation="0 0 -90"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- add a simple camera -->
+        <a-entity camera></a-entity>
+      </a-scene>
+    `;
+
+
     //initialize HTML content on page
+    
+    let date = new Date();
+    let hour = date.getHours();
+    let state = true;
+    let defaultMode = true;
 
     function initialize() {
+
+      if(hour%2==0){
+        markerCode = markerStateOne;
+      }
+      else{
+        markerCode = markerStateTwo
+      }
 
       let main = document.getElementById("main");
       main.innerHTML = markerCode;
@@ -410,15 +564,36 @@
 
       let main = document.getElementById("main");
 
-          if(main.classList.contains('default')){
-            main.classList.remove('default')
-            main.innerHTML = locationCode;
-          }else{
-            main.classList.add('default')
-            main.innerHTML = markerCode;
-          }
+        if(main.classList.contains('default')){
+          main.classList.remove('default')
+          main.innerHTML = locationCode;
+          defaultMode = false;
+        }else{
+          main.classList.add('default')
+          main.innerHTML = markerCode;
+          defaultMode = true;
+        }
 
     };
+
+    //possible function needed to cycle content every x interval of time during a continuous session?
+    
+    function cycleContent() {
+      if(state){
+        markerCode = markerStateOne
+        state = false;
+      }
+      else{
+        markerCode = markerStateTwo
+        state = true;
+      }
+
+      if(defaultMode){
+        main.innerHTML = markerCode;
+      }
+    }
+
+    setInterval(cycleContent, 10000);
 
     //this sends users to a static web page with project/team details
 
