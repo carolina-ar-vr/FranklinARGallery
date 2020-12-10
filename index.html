@@ -4,13 +4,13 @@
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172973285-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173156222-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-172973285-1');
+    gtag('config', 'UA-173156222-1');
 
     AFRAME.registerComponent('registerevents', {
 		init: function () {
@@ -394,7 +394,32 @@
         <!-- rumors -->
         <a-marker 
         type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/prep-for-deploy/assets/patts/lantern.patt'
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/rumors.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 90"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/rumors.patt"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/rumors-art.jpg"
+            height="1.8"
+            rotation="0 0 -90"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- lantern -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/lantern.patt'
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -408,13 +433,14 @@
           rotation="90 180 90"
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
           >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/prep-for-deploy/assets/images/artist-images/bathtub.jpg"
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/lantern-art.jpg"
             height="1.8"
             rotation="0 0 -90"
             >
             </a-image> 
           </a-entity>
         </a-marker>
+
 
         <!-- add a simple camera -->
         <a-entity camera></a-entity>
