@@ -9,8 +9,8 @@ This application is a collaboration between [UNC Arts Everywhere](https://artsev
 This is the production repo used for hosting the web application. Changes made to the master branch will show up on the live website, exercise caution when committing.
 
 ## Installation
-To set up the development environment, please see instructions from the testing repository here:
-[https://github.com/carolina-ar-vr/Franklin-AR](https://github.com/carolina-ar-vr/Franklin-AR)
+To set up the development environment, please see the instructions readme here:
+[https://github.com/carolina-ar-vr/FranklinARGallery/blob/master/docs/setup.md](https://github.com/carolina-ar-vr/FranklinARGallery/blob/master/docs/setup.md)
 
 If you've done this before with the other demo app then you should only need to clone this repo, create a new self-signed certificate for localhost, and run relevant npm/node commands for setup.
 
