@@ -14,8 +14,8 @@ app.get('/about', function(req, res) {
 });
 
 https.createServer({
-  key: fs.readFileSync(__dirname + '/<key file path here>'),
-  cert: fs.readFileSync(__dirname + '/<cert file path here>')
+  key: fs.readFileSync(__dirname + '/16412916_192.168.1.1998000.key'),
+  cert: fs.readFileSync(__dirname + '/16412916_192.168.1.1998000.cert')
 }, app)
 .listen(8000, function () {
   console.log('Example app listening on port 8000! Go to https://localhost:8000/')

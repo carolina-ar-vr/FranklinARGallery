@@ -1,0 +1,54 @@
+            <a-link 
+            gps-entity-place="latitude: 35.910257; longitude: -79.062963;"
+            scale="5.5 5.5 5.5" 
+            gltf-model='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/models/pin/scene.gltf'
+            >
+              <a-entity 
+              text="
+              color: #000000;
+              align: center; 
+              font: kelsonsans; 
+              value: Franklin St Yoga;
+              width: 4" 
+              position="0 .6 0" 
+              visible="" 
+              scale=".7 .7 .7">
+              </a-entity>
+              <a-entity 
+              text="
+              color: #ffffff; 
+              align: center; 
+              font: kelsonsans; 
+              value: Franklin St Yoga; 
+              width: 4" 
+              position="0 .6 0" 
+              visible="" 
+              scale=".7 .7 .7">
+              </a-entity>
+            </a-link>
+
+
+                  <!-- yoga -->
+        <a-marker 
+        type='pattern' 
+        url='PARSED URL'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="3.0 1 0.8"
+          rotation="ORIENTATION"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/yoga-art.png"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
