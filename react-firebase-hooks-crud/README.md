@@ -1,3 +1,17 @@
+# Setup
+
+Set up your firebase web application and find the configuration information and paste it into firebase.js
+
+Open a Realtime Database in firebase
+
+to run:
+
+NPM I
+
+NPM START
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
