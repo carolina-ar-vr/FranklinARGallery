@@ -3,13 +3,13 @@ import TutorialDataService from "../services/EntityService";
 
 const Entity = (props) => {
     const initialEntityState = {
-        image: "",
-        locName:"",
-        lat: 0,
-        long: 0,
+        gltf_model: "",
+        latitude:0,
+        longitude: 0,
         position: "",
         rotation: "",
         scale: "",
+        value: "",
         published: false
       };
   const [currentEntity, setCurrentEntity] = useState(initialEntityState);
@@ -27,7 +27,7 @@ const Entity = (props) => {
   };
 
   const updatePublished = (status) => {
-    TutorialDataService.update(currentEntity.key, { published: status })
+    DataService.update(currentEntity.key, { published: status })
       .then(() => {
         setCurrentEntity({ ...currentEntity, published: status });
         setMessage("The status was updated successfully!");
@@ -39,16 +39,17 @@ const Entity = (props) => {
 
   const updateEntity = () => {
     const data = {
-        image: currentEntity.image,
-        locName:currentEntity.locName,
-        lat: currentEntity.lat,
-        long: currentEntity.long,
-        position: currentEntity.position,
-        rotation: currentEntity.rotation,
-        scale: currentEntity.scale
+        gltf_model: entity.gltf_model,
+        latitude: entity.latitude,
+        longitude: entity.longitude,
+        position: entity.position,
+        rotation: entity.rotation,
+        scale: entity.scale,
+        value: entity.value,
+        published: false
     };
 
-    TutorialDataService.update(currentEntity.key, data)
+    DataService.update(currentEntity.key, data)
       .then(() => {
         setMessage("The entity was updated successfully!");
       })
@@ -58,7 +59,7 @@ const Entity = (props) => {
   };
 
   const deleteEntity = () => {
-    TutorialDataService.remove(currentEntity.key)
+    DataService.remove(currentEntity.key)
       .then(() => {
         props.refreshList();
       })
@@ -75,55 +76,43 @@ const Entity = (props) => {
           <form>
 
           <div className="form-group">
-            <label htmlFor="image">Image</label>
+            <label htmlFor="gltf-model">gltf-model</label>
             <input
               type="text"
               className="form-control"
-              id="image"
+              id="gltf_model"
               required
-              value={entity.image}
+              value={entity.gltf_model}
               onChange={handleInputChange}
-              name="image"
+              name="gltf_model"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="locName">Location Name</label>
+            <label htmlFor="latitude">lattitude</label>
             <input
               type="text"
               className="form-control"
-              id="locName"
+              id="latitude"
               required
-              value={entity.locName}
+              value={entity.latitude}
               onChange={handleInputChange}
-              name="locName"
+              name="latitude"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="lat">Lattitude</label>
+            <label htmlFor="longitude">longitude</label>
             <input
               type="text"
               className="form-control"
-              id="lat"
+              id="longitude"
               required
-              value={entity.lat}
+              value={entity.longitude}
               onChange={handleInputChange}
-              name="lat"
+              name="longitude"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="long">Longitude</label>
-            <input
-              type="text"
-              className="form-control"
-              id="long"
-              required
-              value={entity.long}
-              onChange={handleInputChange}
-              name="long"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="position">Position</label>
+            <label htmlFor="position">position</label>
             <input
               type="text"
               className="form-control"
@@ -135,7 +124,7 @@ const Entity = (props) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="rotation">Rotation</label>
+            <label htmlFor="rotation">rotation</label>
             <input
               type="text"
               className="form-control"
@@ -147,7 +136,7 @@ const Entity = (props) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="scale">Scale</label>
+            <label htmlFor="scale">scale</label>
             <input
               type="text"
               className="form-control"
@@ -156,6 +145,18 @@ const Entity = (props) => {
               value={entity.scale}
               onChange={handleInputChange}
               name="scale"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="value">value</label>
+            <input
+              type="text"
+              className="form-control"
+              id="value"
+              required
+              value={entity.value}
+              onChange={handleInputChange}
+              name="value"
             />
           </div>
 
