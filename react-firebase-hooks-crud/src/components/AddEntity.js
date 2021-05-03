@@ -3,13 +3,13 @@ import TutorialDataService from "../services/EntityService";
 
 const AddEntity = () => {
   const initialEntityState = {
-    image: "",
-    locName:"",
-    lat: 0,
-    long: 0,
+    gltf_model: "",
+    latitude:0,
+    longitude: 0,
     position: "",
     rotation: "",
     scale: "",
+    value: "",
     published: false
   };
   const [entity, setEntity] = useState(initialEntityState);
@@ -22,17 +22,17 @@ const AddEntity = () => {
 
   const saveEntity = () => {
     var data = {
-      image: entity.image,
-      locName:entity.locName,
-      lat: entity.lat,
-      long: entity.long,
-      position: entity.position,
-      rotation: entity.rotation,
-      scale: entity.scale,
-      published: false
+        gltf_model: entity.gltf_model,
+        latitude: entity.latitude,
+        longitude: entity.longitude,
+        position: entity.position,
+        rotation: entity.rotation,
+        scale: entity.scale,
+        value: entity.value,
+        published: false
     };
 
-    TutorialDataService.create(data)
+    DataService.create(data)
       .then(() => {
         setSubmitted(true);
       })
@@ -58,55 +58,43 @@ const AddEntity = () => {
       ) : (
         <div>
           <div className="form-group">
-            <label htmlFor="image">Image</label>
+            <label htmlFor="gltf-model">gltf-model</label>
             <input
               type="text"
               className="form-control"
-              id="image"
+              id="gltf_model"
               required
-              value={entity.image}
+              value={entity.gltf_model}
               onChange={handleInputChange}
-              name="image"
+              name="gltf_model"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="locName">Location Name</label>
+            <label htmlFor="latitude">lattitude</label>
             <input
               type="text"
               className="form-control"
-              id="locName"
+              id="latitude"
               required
-              value={entity.locName}
+              value={entity.latitude}
               onChange={handleInputChange}
-              name="locName"
+              name="latitude"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="lat">Lattitude</label>
+            <label htmlFor="longitude">longitude</label>
             <input
               type="text"
               className="form-control"
-              id="lat"
+              id="longitude"
               required
-              value={entity.lat}
+              value={entity.longitude}
               onChange={handleInputChange}
-              name="lat"
+              name="longitude"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="long">Longitude</label>
-            <input
-              type="text"
-              className="form-control"
-              id="long"
-              required
-              value={entity.long}
-              onChange={handleInputChange}
-              name="long"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="position">Position</label>
+            <label htmlFor="position">position</label>
             <input
               type="text"
               className="form-control"
@@ -118,7 +106,7 @@ const AddEntity = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="rotation">Rotation</label>
+            <label htmlFor="rotation">rotation</label>
             <input
               type="text"
               className="form-control"
@@ -130,7 +118,7 @@ const AddEntity = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="scale">Scale</label>
+            <label htmlFor="scale">scale</label>
             <input
               type="text"
               className="form-control"
@@ -139,6 +127,30 @@ const AddEntity = () => {
               value={entity.scale}
               onChange={handleInputChange}
               name="scale"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="value">value</label>
+            <input
+              type="text"
+              className="form-control"
+              id="value"
+              required
+              value={entity.value}
+              onChange={handleInputChange}
+              name="value"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="published">published</label>
+            <input
+              type="text"
+              className="form-control"
+              id="published"
+              required
+              value={entity.published}
+              onChange={handleInputChange}
+              name="published"
             />
           </div>
 
