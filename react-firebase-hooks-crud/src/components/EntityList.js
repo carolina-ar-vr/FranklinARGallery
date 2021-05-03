@@ -8,7 +8,7 @@ const EntityList = () => {
   const [currentIndex, setCurrentIndex] = useState(-1);
 
   
-  const [entities, loading, error] = useList(TutorialDataService.getAll());
+  const [entities, loading, error] = useList(DataService.getAll());
 
   const refreshList = () => {
     setCurrentEntity(null);
@@ -16,17 +16,25 @@ const EntityList = () => {
   };
 
   const setActiveEntity = (entity, index) => {
-    const {image,locName,lat,long,position,rotation,scale,published } = entity.val();
+    const {
+        gltf_model,
+        latitude,
+        longitude,
+        position,
+        rotation,
+        scale,
+        value,
+        published} = entity.val();
 
     setCurrentEntity({
       key: entity.key,
-      image,
-      locName,
-      lat,
-      long,
+      gltf_model,
+      latitude,
+      longitude,
       position,
       rotation,
       scale,
+      value,
       published
     });
 
@@ -34,7 +42,7 @@ const EntityList = () => {
   };
 
   const removeAllEntity = () => {
-    TutorialDataService.removeAll()
+    DataService.removeAll()
       .then(() => {
         refreshList();
       })
