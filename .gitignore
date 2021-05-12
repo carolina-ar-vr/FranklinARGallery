@@ -119,3 +119,6 @@ dist
 *.key
 *.cert
 app.js
+app.js
+package.json
+app.js

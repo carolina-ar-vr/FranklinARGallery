@@ -19,5 +19,8 @@
     "express": "^4.17.1"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "- [finished application](https://artonfranklin.com/)\r - [release blog post](https://artseverywhere.unc.edu/art-walk-on-franklin/)\r - [app info website](https://artonfranklin.netlify.app/)",
+  "directories": {
+    "doc": "docs"
+  }
 }
