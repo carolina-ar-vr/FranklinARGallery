@@ -387,131 +387,85 @@
       vr-mode-ui="enabled: false;" 
       embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-        <!-- handle hiro marker -->
-        <a-marker preset='hiro'
-        smooth="true"
-        registerevents
-        >
-          <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
-            <a-torus-knot radius='0.26' radius-tubular='0.05'
-            animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
-            </a-torus-knot>
-          </a-box>
-        </a-marker>
-    
-        <!-- handle kanji marker -->
-        <a-marker preset='kanji'
-        smooth="true"
-        registerevents
-        >
-          <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
-            <a-torus-knot radius='0.26' radius-tubular='0.05'
-            animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true">
-            </a-torus-knot>
-          </a-box>
-        </a-marker>
-
-        <!-- handle custom marker1 (CARVR) -->
-        <a-marker 
-        type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-CARVR_MARKER.patt'
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        smooth="true"
-        >
-          <a-entity
-          class="clickable"
-          gesture-handler
-          position="0 1.5 0"
-          scale="0.8 0.8 0.8"
-          rotation="90 180 0"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
-          >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/starry-night.jpg"
-            width="1.8"
-            >
-            </a-image> 
-          </a-entity>
-        </a-marker>
-    
-        <!-- handle custom marker2 (Triangle Design) -->
-        <a-marker 
-        type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-Marker2.patt'
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        smooth="true"
-        >
-          <a-entity
-          class="clickable"
-          gesture-handler
-          position="0 1.5 0"
-          scale="0.8 0.8 0.8"
-          rotation="90 180 0"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
-          >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/american_gothic.jpg"
-            width="1.8"
-            >
-            </a-image> 
-          </a-entity>
-        </a-marker>
-
-      <!-- handle custom marker3 -->
-        <a-marker 
-        type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-marker3.patt'
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        smooth="true"
-        >
-          <a-entity
-          class="clickable"
-          gesture-handler
-          position="0 1.5 0"
-          scale="0.8 0.8 0.8"
-          rotation="90 180 0"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
-          >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/cafe_terrace.jpeg"
-            width="1.8"
-            >
-            </a-image> 
-          </a-entity>
-        </a-marker>
-
-      <!-- handle custom marker4 -->
-        <a-marker 
-        type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/patts/pattern-marker4.patt'
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        smooth="true"
-        >
-          <a-entity
-          class="clickable"
-          gesture-handler
-          position="0 1.5 0"
-          scale="0.8 0.8 0.8"
-          rotation="90 180 90"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
-          >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/images/mona_lisa_cat.jpg"
-            height="1.8"
-            rotation="0 0 -90"
-            >
-            </a-image> 
-          </a-entity>
-        </a-marker>
-
-        <!-- rumors -->
+        <!-- Carolina Coffee Shop -->
         <a-marker 
         type='pattern' 
         url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-01_Carolina_Coffeeshop.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Carolina Coffee Shop 1983.JPG"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Carolina Theatre -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-02_Carolina_Theatre.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Carolina Theatre.JPG"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Crook's Corner -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-03_Crooks_Corner.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Crooks corner as a fish stand in 1951.JPG"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Flower Ladies -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-04_Flower_Ladies.patt'
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -525,7 +479,7 @@
           rotation="90 180 0"
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
           >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/rumors-art.jpg"
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/flower ladies.JPG"
             width="1.7"
             rotation="180 0 180"
             >
@@ -533,10 +487,10 @@
           </a-entity>
         </a-marker>
 
-        <!-- lantern -->
+        <!-- Fowler's -->
         <a-marker 
         type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/lantern.patt'
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-05_Fowlers_Food_Store.patt'
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -550,7 +504,7 @@
           rotation="90 180 0"
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
           >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/lantern-art.jpg"
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Fowlers Food Store _ parking lot.png"
             width="1.7"
             rotation="180 0 180"
             >
@@ -558,91 +512,16 @@
           </a-entity>
         </a-marker>
 
-        <!-- yoga -->
+        <!-- Blues On Franklin -->
         <a-marker 
         type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/yoga.patt'
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-06_Blues_On_Franklin.patt'
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
         smooth="true"
         >
           <a-entity
-          class="clickable"
-          gesture-handler
-          position="0 1.5 0"
-          scale="3.0 1 0.8"
-          rotation="90 180 0"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
-          >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/yoga-art.png"
-            width="1.7"
-            rotation="180 0 180"
-            >
-            </a-image> 
-          </a-entity>
-        </a-marker>
-
-        <!-- purple bowl -->
-        <a-marker 
-        type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/purplebowl.patt'
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        smooth="true"
-        >
-          <a-entity
-          class="clickable"
-          gesture-handler
-          position="0 1.5 0"
-          scale="0.5 0.8 0.8"
-          rotation="90 180 0"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
-          >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/purplebowl-art.jpg"
-            width="1.7"
-            rotation="180 0 180"
-            >
-            </a-image> 
-          </a-entity>
-        </a-marker>
-
-        <!-- pizza press -->
-        <a-marker 
-        type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/pizzapresstext.patt'
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        smooth="true"
-        >
-        <a-entity
-          class="clickable"
-          gesture-handler
-          position="0 1.5 0"
-          scale="0.8 1.7 0.8"
-          rotation="90 180 0"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
-          >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/pizzapress-art.png"
-            width="1.7"
-            rotation="180 0 180"
-            >
-            </a-image> 
-          </a-entity>
-        </a-marker>
-
-        <!-- yopo -->
-        <a-marker 
-        type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/yogurtpumptext.patt'
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        smooth="true"
-        >
-        <a-entity
           class="clickable"
           gesture-handler
           position="0 1.5 0"
@@ -650,7 +529,7 @@
           rotation="90 180 0"
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
           >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/yopo-art.jpg"
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/gas station-blues.png"
             width="1.7"
             rotation="180 0 180"
             >
@@ -658,35 +537,10 @@
           </a-entity>
         </a-marker>
 
-        <!-- epilogue -->
+        <!-- Intimate Bookshop -->
         <a-marker 
         type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/epiloguetext.patt'
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        smooth="true"
-        >
-        <a-entity
-          class="clickable"
-          gesture-handler
-          position="0 1.5 0"
-          scale="0.7 0.8 0.8"
-          rotation="90 180 0"
-          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
-          >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/epilogue-art.jpg"
-            width="1.7"
-            rotation="180 0 180"
-            >
-            </a-image> 
-          </a-entity>
-        </a-marker>
-
-        <!-- johnny -->
-        <a-marker 
-        type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/johnnytext.patt'
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-07_Intimate_Bookshop.patt'
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -696,11 +550,11 @@
           class="clickable"
           gesture-handler
           position="0 1.5 0"
-          scale="0.5 0.8 0.8"
+          scale="0.8 0.8 0.8"
           rotation="90 180 0"
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
           >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/johnny-art.png"
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Intimate Bookshop .JPG"
             width="1.7"
             rotation="180 0 180"
             >
@@ -708,10 +562,10 @@
           </a-entity>
         </a-marker>
 
-        <!-- cosmic -->
+        <!-- IP3 -->
         <a-marker 
         type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/cosmicCantinaText.patt'
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-08_IPS.patt'
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -721,11 +575,11 @@
           class="clickable"
           gesture-handler
           position="0 1.5 0"
-          scale="0.8 1.8 0.8"
+          scale="0.6 0.8 0.8"
           rotation="90 180 0"
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
           >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/cosmic-art.JPG"
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Ip3 - Instagram Jan 28, 2016.jpg"
             width="1.7"
             rotation="180 0 180"
             >
@@ -733,10 +587,10 @@
           </a-entity>
         </a-marker>
 
-        <!-- imbibe -->
+        <!-- Julians -->
         <a-marker 
         type='pattern' 
-        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/patts/imbibe.patt'
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-09_Julians.patt'
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -746,11 +600,311 @@
           class="clickable"
           gesture-handler
           position="0 1.5 0"
-          scale="0.5 0.8 0.8"
+          scale="0.8 0.8 0.8"
           rotation="90 180 0"
           gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
           >
-            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/master/assets/images/artist-images/imbibe-art-compressed.jpg"
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Julian_s _ Carolina Coffee Shop 1977.png"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Mama Dip's -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-10_Mama_Dips.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/original mama dips 1983 DTH 9-1-1983.JPG"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Pepper's -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-11_Peppers_Pizza.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="1 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Peppers.png"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Rathskeller -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-12_Rathskeller.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.4 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Rathskeller.png"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- School Kids -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-13_SchoolKids_Records.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/original school kids.jpg"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Shrunken Head -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-14_Shrunken_Head.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Shrunken Head old.JPG"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Spankys -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-15_Spankys_411_West.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Spanky_s and The Hub.png"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Suttons -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-16_Suttons.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Suttons 1993 DTH.JPG"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Time Out -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-17_Time_Out.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Hectors.png"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- TOPO -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-18_Top_Of_The_Hill.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/University Service Station (later the Happy Store).JPG"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Town Hall -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-19_Town_Hall.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Pickwick theatre-later Franklin Centre 1923.JPG"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Varsity Theatre -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-20_Varsity_Theatre.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.4 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Old varsity.JPG"
+            width="1.7"
+            rotation="180 0 180"
+            >
+            </a-image> 
+          </a-entity>
+        </a-marker>
+
+        <!-- Ye Olde Waffle Shop -->
+        <a-marker 
+        type='pattern' 
+        url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/patts/second-set/pattern-21_Ye_Olde_Waffle_Shop.patt'
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        smooth="true"
+        >
+          <a-entity
+          class="clickable"
+          gesture-handler
+          position="0 1.5 0"
+          scale="0.8 0.8 0.8"
+          rotation="90 180 0"
+          gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/erevis/assets/models/frame/scene.gltf"
+          >
+            <a-image src="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/carolina-ar-vr/FranklinARGallery/micah-testing/assets/images/second-set/Old ye olde shot.png"
             width="1.7"
             rotation="180 0 180"
             >
