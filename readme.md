@@ -1,6 +1,5 @@
 # UNC Franklin AR Everywhere
 
-- [finished application](https://artonfranklin.com/)
 - [release blog post](https://artseverywhere.unc.edu/art-walk-on-franklin/)
 - [app info website](https://artonfranklin.netlify.app/)
 
