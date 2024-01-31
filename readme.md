@@ -2,6 +2,7 @@
 
 - [release blog post](https://artseverywhere.unc.edu/art-walk-on-franklin/)
 - [app info website](https://artonfranklin.netlify.app/)
+- [basic app demo](https://youtu.be/3uRT-sj1_RQ)
 
 This application is a collaboration between [UNC Arts Everywhere](https://artseverywhere.unc.edu/) and [Carolina AR/VR](https://carvr.org/) which aims to bring web AR experiences to participating Franklin Street businesses. To do this we make use of the open source libraries [AR.js](https://ar-js-org.github.io/AR.js-Docs/) and [A-Frame](https://aframe.io/)
 
